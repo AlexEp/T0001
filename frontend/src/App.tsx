@@ -5,16 +5,16 @@ import { Route, Switch, Redirect } from 'react-router';
 
 import NotFound from './screens/NotFound';
 import Home from './screens/Home';
+import Word from './screens/Word';
 
 function App() {
 	return (
 		<div className="App">
 			<Switch>
-				<Route path="/" component={Home} />
-				{/* 
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} /> */}
+				<Route exact path="/" component={Home} />
+				<Route path="/word/:id" component={Word} />
 				<Route path="/not-found" component={NotFound} />
+
 				<Redirect to="/not-found" />
 			</Switch>
 		</div>
